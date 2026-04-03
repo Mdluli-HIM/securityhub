@@ -4,6 +4,7 @@ import "./globals.css";
 import { SmoothScrollProvider } from "@/components/providers/smooth-scroll-provider";
 import { SiteHeader } from "@/components/site/site-header";
 import { SiteFooter } from "@/components/site/site-footer";
+import { SiteLoader } from "@/components/site/site-loader";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${manrope.variable} font-body antialiased`}
       >
+        <SiteLoader />
         <SmoothScrollProvider>
           <SiteHeader />
           {children}

@@ -1,258 +1,212 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, LockKeyhole } from "lucide-react";
 import { siteContent } from "@/content/site";
 
 const topGroups = [
   {
-    title: "Blackridge",
-    links: ["About", "Careers", "Press", "Contact", "Legal", "Security"],
-  },
-  {
-    title: "Capabilities",
+    title: "Services",
     links: [
-      "Monitoring",
-      "Intelligence",
+      "24/7 Monitoring",
       "Access Control",
       "Incident Response",
-      "Governance",
-      "Integrations",
-      "Features",
+      "Executive Protection",
+      "Risk Reviews",
+      "Security Consultation",
     ],
   },
   {
-    title: "Solutions",
+    title: "Environments",
     links: [
-      "Corporate Security Systems",
-      "Executive Protection",
-      "Professional Security Services",
-      "Site Risk Reviews",
-      "AI Deployment",
-      "Perimeter Control",
-      "Processes",
+      "Corporate Offices",
+      "Luxury Residential",
+      "Retail & Hospitality",
+      "Industrial Sites",
+      "Multi-Site Operations",
+      "Executive Movement",
+    ],
+  },
+  {
+    title: "Support",
+    links: [
+      "Operational Planning",
+      "System Design",
+      "Response Workflows",
+      "Visitor Control",
+      "Perimeter Logic",
+      "Review Cycles",
     ],
   },
 ];
 
 const bottomGroups = [
   {
-    title: "Resources",
-    links: [
-      "Pricing",
-      "Editorial",
-      "Events",
-      "Partners",
-      "Help Center",
-      "Developers",
-    ],
+    title: "Company",
+    links: ["About Blackridge", "Our Method", "Capabilities", "Consultation"],
   },
   {
-    title: "Customers",
-    links: [
-      "Our Impact",
-      "Blackridge for Enterprise",
-      "Blackridge for Scale Ups",
-      "Blackridge for Start Ups",
-      "Blackridge for SaaS",
-      "Blackridge for Security",
-    ],
+    title: "Useful Links",
+    links: ["Security Review", "Contact", "Industries", "Solutions"],
   },
   {
-    title: "Migration Guides",
+    title: "Launch Notes",
     links: [
-      "Switch from Legacy CCTV",
-      "Switch from Legacy Access",
-      "Switch from Fragmented Vendors",
-      "Switch from Manual Guard Logs",
-      "Switch from Basic Monitoring",
-      "Switch from Outdated Systems",
+      "Replace with your phone number",
+      "Replace with your email address",
+      "Replace with your service area",
+      "Replace with your social links",
     ],
   },
 ];
 
-const complianceBadges = ["ISO 27001", "SOC II", "CCPA", "GDPR"];
+const smallTags = ["Monitoring", "Access", "Response", "Risk"];
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-black/10 bg-[#f4f4f1] pt-16">
+    <footer className="border-t border-black/10 bg-[#f4f4f1] pt-10 sm:pt-12 lg:pt-16">
       <div className="container-shell">
-        <div className="grid gap-12 border-b border-black/10 pb-16 lg:grid-cols-4">
+        <div className="grid gap-10 border-b border-black/10 pb-10 sm:gap-12 sm:pb-12 lg:grid-cols-4 lg:pb-16">
           <div>
-            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.26em] text-black/36">
-              {topGroups[0].title}
-            </p>
-
-            <div className="mt-8 flex flex-col gap-5">
-              {topGroups[0].links.map((link) => (
-                <Link
-                  key={link}
-                  href="#"
-                  className="font-display text-[2.15rem] leading-none tracking-[-0.05em] text-black transition hover:text-black/65"
-                >
-                  {link}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.26em] text-black/36">
-              {topGroups[1].title}
-            </p>
-
-            <div className="mt-8 flex flex-col gap-5">
-              {topGroups[1].links.map((link) => (
-                <Link
-                  key={link}
-                  href="#"
-                  className="text-[1.05rem] leading-none tracking-[-0.02em] text-black/82 transition hover:text-black/60"
-                >
-                  {link}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.26em] text-black/36">
-              {topGroups[2].title}
-            </p>
-
-            <div className="mt-8 flex flex-col gap-5">
-              {topGroups[2].links.map((link) => (
-                <Link
-                  key={link}
-                  href="#"
-                  className="text-[1.05rem] leading-none tracking-[-0.02em] text-black/82 transition hover:text-black/60"
-                >
-                  {link}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.26em] text-black/36">
-              Recognized as a world-leader by
-            </p>
-
-            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4 border-b border-black/10 pb-8">
-              <span className="font-display text-[2.1rem] tracking-[-0.05em] text-black/58">
-                Gartner.
-              </span>
-              <span className="font-display text-[2.1rem] tracking-[-0.05em] text-black/58">
-                IDC
-              </span>
-              <span className="font-display text-[2.1rem] tracking-[-0.05em] text-black/58">
-                G2
-              </span>
-              <span className="text-[0.95rem] leading-5 text-black/48">
-                880+ reviews
+            <div className="inline-flex items-center gap-2 border border-[#8b6a45]/20 bg-[#8b6a45]/6 px-3 py-1.5">
+              <LockKeyhole className="h-3.5 w-3.5 text-[#8b6a45]" />
+              <span className="text-[0.64rem] font-semibold uppercase tracking-[0.22em] text-[#8b6a45]">
+                Blackridge
               </span>
             </div>
 
-            <p className="mt-8 max-w-[24rem] text-[1rem] leading-8 text-black/56">
-              {siteContent.companyName} is built to keep your people, property,
-              and operations secure. We put privacy and security front and
-              centre, so you don’t have to.
-            </p>
+            <div className="mt-6 flex flex-col gap-4 sm:mt-8 sm:gap-5">
+              <p className="font-display text-[1.5rem] leading-none tracking-[-0.05em] text-black sm:text-[1.75rem] lg:text-[2.15rem]">
+                Security Systems
+              </p>
+              <p className="max-w-[26rem] text-[0.94rem] leading-7 text-black/58 sm:text-[1rem] sm:leading-8">
+                Premium integrated protection for people, property, operations,
+                and business continuity.
+              </p>
+            </div>
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              {complianceBadges.map((badge) => (
+            <div className="mt-6 flex flex-wrap gap-3 sm:mt-8">
+              {smallTags.map((tag) => (
                 <div
-                  key={badge}
-                  className="flex h-14 min-w-14 items-center justify-center border border-black/12 px-4 text-[0.72rem] font-semibold uppercase tracking-[0.12em] text-black/56"
+                  key={tag}
+                  className="inline-flex items-center gap-2 border border-[#8b6a45]/18 bg-[#8b6a45]/6 px-3 py-2"
                 >
-                  {badge}
+                  <LockKeyhole className="h-3.5 w-3.5 text-[#8b6a45]" />
+                  <span className="text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-black/62">
+                    {tag}
+                  </span>
                 </div>
               ))}
             </div>
           </div>
+
+          {topGroups.map((group) => (
+            <div key={group.title}>
+              <p className="text-[0.64rem] font-semibold uppercase tracking-[0.26em] text-black/36 sm:text-[0.68rem]">
+                {group.title}
+              </p>
+
+              <div className="mt-6 flex flex-col gap-4 sm:mt-8 sm:gap-5">
+                {group.links.map((link) => (
+                  <Link
+                    key={link}
+                    href="#"
+                    className="text-[0.96rem] leading-none tracking-[-0.02em] text-black/82 transition hover:text-black/60 sm:text-[1.02rem] lg:text-[1.05rem]"
+                  >
+                    {link}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
 
-        <div className="grid gap-12 py-14 lg:grid-cols-4">
-          <div>
-            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.26em] text-black/36">
-              {bottomGroups[0].title}
-            </p>
+        <div className="grid gap-10 py-10 sm:gap-12 sm:py-12 lg:grid-cols-4 lg:py-14">
+          {bottomGroups.map((group, index) => (
+            <div key={group.title}>
+              <p className="text-[0.64rem] font-semibold uppercase tracking-[0.26em] text-black/36 sm:text-[0.68rem]">
+                {group.title}
+              </p>
 
-            <div className="mt-8 flex flex-col gap-5">
-              {bottomGroups[0].links.map((link) => (
-                <Link
-                  key={link}
-                  href="#"
-                  className="font-display text-[2rem] leading-none tracking-[-0.05em] text-black transition hover:text-black/65"
-                >
-                  {link}
-                </Link>
-              ))}
+              <div className="mt-6 flex flex-col gap-4 sm:mt-8 sm:gap-5">
+                {group.links.map((link) => (
+                  <Link
+                    key={link}
+                    href="#"
+                    className={
+                      index === 0
+                        ? "font-display text-[1.25rem] leading-none tracking-[-0.05em] text-black transition hover:text-black/65 sm:text-[1.45rem] lg:text-[1.7rem]"
+                        : "text-[0.96rem] leading-none tracking-[-0.02em] text-black/82 transition hover:text-black/60 sm:text-[1.02rem] lg:text-[1.05rem]"
+                    }
+                  >
+                    {link}
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
-
-          <div>
-            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.26em] text-black/36">
-              {bottomGroups[1].title}
-            </p>
-
-            <div className="mt-8 flex flex-col gap-5">
-              {bottomGroups[1].links.map((link) => (
-                <Link
-                  key={link}
-                  href="#"
-                  className="text-[1.05rem] leading-none tracking-[-0.02em] text-black/82 transition hover:text-black/60"
-                >
-                  {link}
-                </Link>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <p className="text-[0.68rem] font-semibold uppercase tracking-[0.26em] text-black/36">
-              {bottomGroups[2].title}
-            </p>
-
-            <div className="mt-8 flex flex-col gap-5">
-              {bottomGroups[2].links.map((link) => (
-                <Link
-                  key={link}
-                  href="#"
-                  className="text-[1.05rem] leading-none tracking-[-0.02em] text-black/82 transition hover:text-black/60"
-                >
-                  {link}
-                </Link>
-              ))}
-            </div>
-          </div>
+          ))}
 
           <div>
             <label className="block">
-              <span className="text-[0.98rem] text-black/42">
+              <span className="text-[0.94rem] text-black/42 sm:text-[0.98rem]">
                 Email Address*
               </span>
               <input
                 type="email"
-                placeholder=""
-                className="mt-5 h-10 w-full border-0 border-b border-black/35 bg-transparent px-0 text-[1rem] text-black outline-none placeholder:text-black/28 focus:border-black"
+                className="mt-4 h-10 w-full border-0 border-b border-black/35 bg-transparent px-0 text-[1rem] text-black outline-none placeholder:text-black/28 focus:border-black"
               />
             </label>
 
-            <label className="mt-8 flex items-start gap-3">
+            <label className="mt-6 flex items-start gap-3 sm:mt-8">
               <input
                 type="checkbox"
                 className="mt-1 h-4 w-4 border border-black/15 bg-transparent accent-black"
               />
-              <span className="max-w-[24rem] text-[0.9rem] leading-6 text-black/42">
+              <span className="max-w-[24rem] text-[0.86rem] leading-6 text-black/42 sm:text-[0.9rem]">
                 I agree to {siteContent.companyName} processing my personal data
                 in accordance with the Privacy Policy.
               </span>
             </label>
 
-            <button className="mt-8 inline-flex h-12 items-center gap-2 border border-black bg-black px-5 text-[0.8rem] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-transparent hover:text-black">
-              <span>Subscribe to our newsletter</span>
+            <button className="mt-6 inline-flex h-11 items-center gap-2 border border-black bg-black px-4 text-[0.74rem] font-semibold uppercase tracking-[0.16em] text-white transition hover:bg-transparent hover:text-black sm:mt-8 sm:h-12 sm:px-5 sm:text-[0.8rem] sm:tracking-[0.18em]">
+              <span>Subscribe to updates</span>
               <ArrowUpRight className="h-4 w-4" />
             </button>
+          </div>
+        </div>
+
+        <div className="border-t border-black/10 pt-10 sm:pt-12 md:pt-16">
+          <p className="font-display text-[clamp(2.8rem,16vw,9.5rem)] leading-[0.88] tracking-[-0.1em] text-black">
+            Controlled. Refined. Ready.
+          </p>
+
+          <div className="mt-6 flex flex-col gap-4 pb-8 text-[0.88rem] text-black/78 sm:mt-8 md:mt-10 lg:flex-row lg:items-center lg:justify-between">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 sm:gap-x-8">
+              <span>© 2026 {siteContent.companyName} inc.</span>
+              <span className="inline-flex items-center gap-2">
+                <span className="h-2.5 w-2.5 bg-[#8b6a45]" />
+                Status
+              </span>
+              <Link href="#" className="transition hover:text-black/55">
+                Terms of Service
+              </Link>
+              <Link href="#" className="transition hover:text-black/55">
+                Privacy Policy
+              </Link>
+              <Link href="#" className="transition hover:text-black/55">
+                Cookie Policy
+              </Link>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <span>Follow us</span>
+              <Link
+                href="#"
+                className="inline-flex h-6 w-6 items-center justify-center border border-black/60 text-[0.7rem] font-semibold"
+              >
+                in
+              </Link>
+            </div>
           </div>
         </div>
       </div>

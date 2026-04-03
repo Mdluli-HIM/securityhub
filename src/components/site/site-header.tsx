@@ -18,7 +18,6 @@ export function SiteHeader() {
 
   const activeMenu = activeItem?.menu;
 
-  // Prevent scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => {
@@ -26,7 +25,6 @@ export function SiteHeader() {
     };
   }, [mobileOpen]);
 
-  // ✅ Resize cleanup (you asked for this)
   useEffect(() => {
     const onResize = () => {
       if (window.innerWidth >= 1024) {
@@ -107,7 +105,6 @@ export function SiteHeader() {
                 </span>
               </div>
 
-              {/* MOBILE BUTTON */}
               <button
                 onClick={toggleMobileMenu}
                 className="inline-flex h-11 w-11 items-center justify-center border border-black/12 lg:hidden"
@@ -146,7 +143,7 @@ export function SiteHeader() {
         </div>
       </header>
 
-      {/* ✅ MOBILE MENU (FIXED PROPERLY) */}
+      {/* MOBILE MENU */}
       {mobileOpen && (
         <div className="fixed inset-0 z-40 lg:hidden">
           <div
@@ -156,60 +153,128 @@ export function SiteHeader() {
 
           <div className="absolute inset-x-0 top-20 h-[calc(100dvh-5rem)] bg-[#f4f4f1]">
             <div className="flex h-full flex-col">
-              <div className="container-shell py-4">
-                <p className="text-xs uppercase text-black/40">Navigation</p>
+              {/* ✅ 1. TOP INTRO (TIGHTENED) */}
+              <div className="container-shell border-b border-black/10 py-4">
+                <p className="text-[0.64rem] font-semibold uppercase tracking-[0.24em] text-black/34">
+                  Navigation
+                </p>
+                <p className="mt-2 max-w-[16rem] text-[0.84rem] leading-5 text-black/46">
+                  Structured protection for modern business.
+                </p>
               </div>
 
-              <div className="container-shell flex-1 overflow-y-auto">
+              {/* ✅ 6. SCROLL CONTAINER */}
+              <div className="container-shell min-h-0 flex-1 overflow-y-auto py-1">
                 {siteContent.nav.map((item) => {
                   const isExpanded = expandedMobile === item.label;
 
                   if (!item.menu) {
                     return (
+                      /* ✅ 2. TIGHT ROW */
                       <Link
                         key={item.label}
                         href={item.href}
                         onClick={closeMobileMenu}
-                        className="flex justify-between py-4 border-b"
+                        className="flex items-center justify-between border-b border-black/10 py-3.5"
                       >
-                        {item.label}
-                        <ArrowUpRight />
+                        <span className="font-display text-[1.65rem] leading-none tracking-[-0.055em] text-black">
+                          {item.label}
+                        </span>
+                        <ArrowUpRight className="h-3.5 w-3.5 text-black/42" />
                       </Link>
                     );
                   }
 
                   return (
-                    <div key={item.label}>
+                    <div key={item.label} className="border-b border-black/10">
+                      {/* ✅ 3. TIGHT ACCORDION */}
                       <button
                         onClick={() => toggleMobileSection(item.label)}
-                        className="flex w-full justify-between py-4"
+                        className="flex w-full items-center justify-between py-3.5 text-left"
                       >
-                        {item.label}
-                        {isExpanded ? <Minus /> : <Plus />}
+                        <span className="font-display text-[1.65rem] leading-none tracking-[-0.055em] text-black">
+                          {item.label}
+                        </span>
+                        {isExpanded ? (
+                          <Minus className="h-3.5 w-3.5 text-black/42" />
+                        ) : (
+                          <Plus className="h-3.5 w-3.5 text-black/42" />
+                        )}
                       </button>
 
                       {isExpanded && (
-                        <div className="pl-4 pb-4">
-                          {item.menu.sections.map((section) => (
-                            <div key={section.title}>
-                              <p className="text-xs">{section.title}</p>
-                              {section.links.map((link) => (
-                                <Link
-                                  key={link.label}
-                                  href={link.href}
-                                  onClick={closeMobileMenu}
-                                  className="block py-1"
-                                >
-                                  {link.label}
-                                </Link>
-                              ))}
+                        /* ✅ 4. TIGHT CONTENT */
+                        <div className="pb-3">
+                          <div className="grid gap-5 pt-1">
+                            {item.menu.sections.map((section) => (
+                              <div key={section.title}>
+                                <p className="text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-black/34">
+                                  {section.title}
+                                </p>
+
+                                <div className="mt-2.5 flex flex-col gap-2.5">
+                                  {section.links.map((link) => (
+                                    <Link
+                                      key={link.label}
+                                      href={link.href}
+                                      onClick={closeMobileMenu}
+                                      className="block"
+                                    >
+                                      <span className="text-[0.92rem] leading-5 text-black/80">
+                                        {link.label}
+                                      </span>
+
+                                      {link.description && (
+                                        <p className="mt-1 max-w-[18rem] text-[0.8rem] leading-5 text-black/44">
+                                          {link.description}
+                                        </p>
+                                      )}
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            ))}
+
+                            <div className="border-t border-black/10 pt-3.5">
+                              <p className="text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-black/34">
+                                {item.menu.asideLabel ?? "Overview"}
+                              </p>
+                              <h3 className="font-display mt-2.5 text-[1.08rem] leading-[0.95] tracking-[-0.045em] text-black">
+                                {item.menu.asideTitle}
+                              </h3>
+                              <p className="mt-1.5 max-w-[18rem] text-[0.82rem] leading-5 text-black/46">
+                                {item.menu.asideCopy}
+                              </p>
                             </div>
-                          ))}
+                          </div>
                         </div>
                       )}
                     </div>
                   );
                 })}
+              </div>
+
+              {/* ✅ 5. FOOTER BAR */}
+              <div className="border-t border-black/10 bg-[#f4f4f1]">
+                <div className="container-shell flex items-center justify-between py-3">
+                  <div>
+                    <p className="text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-black/34">
+                      Blackridge
+                    </p>
+                    <p className="mt-0.5 text-[0.8rem] text-black/48">
+                      Security Systems
+                    </p>
+                  </div>
+
+                  <Link
+                    href="#contact"
+                    onClick={closeMobileMenu}
+                    className="ui-button ui-button-solid"
+                  >
+                    <span>Contact</span>
+                    <ArrowUpRight className="h-4 w-4" />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

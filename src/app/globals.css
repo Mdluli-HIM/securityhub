@@ -78,8 +78,7 @@ canvas {
 main,
 header,
 footer,
-section,
-div {
+section {
   position: relative;
   z-index: 1;
 }

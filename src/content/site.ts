@@ -59,6 +59,19 @@ type FooterGroup = {
   }[];
 };
 
+type TrustMark = {
+  index: string;
+  title: string;
+  description: string;
+};
+
+type ImageModule = {
+  eyebrow: string;
+  title: string;
+  description: string;
+  caption: string;
+};
+
 type SiteContent = {
   companyName: string;
   nav: NavItem[];
@@ -76,6 +89,8 @@ type SiteContent = {
   capabilities: Capability[];
   sectors: Sector[];
   process: ProcessStep[];
+  trustMarks: TrustMark[];
+  imageModules: ImageModule[];
   footer: FooterGroup[];
 };
 
@@ -89,37 +104,36 @@ export const siteContent: SiteContent = {
       menu: {
         sections: [
           {
-            title: "Core",
+            title: "Core Services",
             links: [
               { label: "24/7 Monitoring", href: "#solutions" },
               { label: "Access Control", href: "#solutions" },
-              { label: "Executive Protection", href: "#solutions" },
               { label: "Incident Response", href: "#solutions" },
+              { label: "Executive Protection", href: "#solutions" },
             ],
           },
           {
             title: "Systems",
             links: [
-              { label: "Surveillance Design", href: "#platform" },
-              { label: "Integrated Command Layer", href: "#platform" },
-              { label: "Perimeter Logic", href: "#platform" },
-              { label: "Visitor Management", href: "#platform" },
+              { label: "Integrated Surveillance", href: "#platform" },
+              { label: "Perimeter Security", href: "#platform" },
+              { label: "Visitor Control", href: "#platform" },
+              { label: "Command Visibility", href: "#platform" },
             ],
           },
           {
-            title: "Governance",
+            title: "Advisory",
             links: [
-              { label: "Risk & Compliance", href: "#insights" },
-              { label: "Site Assessments", href: "#insights" },
-              { label: "Policy Structuring", href: "#insights" },
-              { label: "Operational Reviews", href: "#insights" },
+              { label: "Risk Reviews", href: "#insights" },
+              { label: "Operational Planning", href: "#insights" },
+              { label: "Security Consultation", href: "#contact" },
             ],
           },
         ],
-        asideTitle: "Security architecture",
-        asideLabel: "Structured protection",
+        asideTitle: "Premium protection architecture",
+        asideLabel: "Integrated protection",
         asideCopy:
-          "Integrated security systems for modern businesses, executive environments, and critical assets.",
+          "Modern security systems designed to protect people, property, operations, and reputation without unnecessary complexity.",
       },
     },
     {
@@ -129,34 +143,34 @@ export const siteContent: SiteContent = {
       menu: {
         sections: [
           {
+            title: "Visibility",
+            links: [
+              { label: "Live Site Awareness", href: "#platform" },
+              { label: "Threat Escalation", href: "#platform" },
+              { label: "Operator Oversight", href: "#platform" },
+            ],
+          },
+          {
             title: "Control",
             links: [
-              { label: "Command Visibility", href: "#platform" },
-              { label: "Escalation Logic", href: "#platform" },
-              { label: "Operator Workflows", href: "#platform" },
+              { label: "Credential Logic", href: "#platform" },
+              { label: "Restricted Zones", href: "#platform" },
+              { label: "Response Workflows", href: "#platform" },
             ],
           },
           {
-            title: "Operations",
+            title: "Assurance",
             links: [
-              { label: "Alert Routing", href: "#platform" },
-              { label: "Response Coordination", href: "#platform" },
-              { label: "Duty Structure", href: "#platform" },
-            ],
-          },
-          {
-            title: "Reporting",
-            links: [
-              { label: "Audit Trails", href: "#proof" },
-              { label: "Leadership Reporting", href: "#proof" },
+              { label: "Reporting", href: "#proof" },
               { label: "Review Cycles", href: "#insights" },
+              { label: "Consultation", href: "#contact" },
             ],
           },
         ],
-        asideTitle: "A calm control layer",
+        asideTitle: "A calmer control layer",
         asideLabel: "Operational clarity",
         asideCopy:
-          "One premium layer for access, monitoring, incident handling, and executive-grade visibility.",
+          "One structured layer for monitoring, control, response, and decision-making across modern security environments.",
       },
     },
     {
@@ -166,7 +180,7 @@ export const siteContent: SiteContent = {
       menu: {
         sections: [
           {
-            title: "Spaces",
+            title: "Sites",
             links: [
               { label: "Corporate Offices", href: "#proof" },
               { label: "Luxury Residential", href: "#proof" },
@@ -177,23 +191,23 @@ export const siteContent: SiteContent = {
             title: "Operations",
             links: [
               { label: "Industrial Sites", href: "#proof" },
-              { label: "Multi-Site Groups", href: "#proof" },
-              { label: "Leadership Movement", href: "#proof" },
+              { label: "Multi-Site Businesses", href: "#proof" },
+              { label: "Executive Movement", href: "#proof" },
             ],
           },
           {
-            title: "Use Cases",
+            title: "Applications",
             links: [
-              { label: "High-Trust Environments", href: "#proof" },
               { label: "Asset Protection", href: "#proof" },
-              { label: "Discreet Executive Security", href: "#proof" },
+              { label: "Business Continuity", href: "#proof" },
+              { label: "Discreet Security", href: "#proof" },
             ],
           },
         ],
-        asideTitle: "Built around the environment",
+        asideTitle: "Security designed around the environment",
         asideLabel: "Tailored posture",
         asideCopy:
-          "Different environments need different security behavior. We design around how each space actually operates.",
+          "Every environment behaves differently. We design around movement, exposure, risk, and operational pressure.",
       },
     },
     {
@@ -203,156 +217,191 @@ export const siteContent: SiteContent = {
       menu: {
         sections: [
           {
-            title: "Discover",
+            title: "Company",
             links: [
-              { label: "Editorial", href: "#insights" },
-              { label: "Perspectives", href: "#insights" },
-              { label: "FAQs", href: "#insights" },
+              { label: "About Blackridge", href: "#contact" },
+              { label: "Our Method", href: "#insights" },
+              { label: "Why Blackridge", href: "#proof" },
+            ],
+          },
+          {
+            title: "Resources",
+            links: [
+              { label: "Security Review", href: "#contact" },
+              { label: "Consultation", href: "#contact" },
               { label: "Contact", href: "#contact" },
             ],
           },
           {
-            title: "Learn",
-            links: [
-              { label: "About", href: "#contact" },
-              { label: "Method", href: "#insights" },
-              { label: "Standards", href: "#proof" },
-              { label: "Security Review", href: "#contact" },
-            ],
-          },
-          {
-            title: "Spotlight",
+            title: "Perspective",
             links: [
               {
-                label: "The Blackridge Method",
+                label: "Protocols, not posturing",
                 href: "#insights",
                 description:
-                  "How premium protection is structured across people, property, and protocol.",
+                  "A practical approach to security built on readiness, response, and controlled execution.",
               },
             ],
           },
         ],
         asideTitle: "Protection without theatre",
-        asideLabel: "Editorial direction",
+        asideLabel: "Our point of view",
         asideCopy:
-          "Calm, structured, premium security for organizations that value discretion, logic, and trust.",
+          "We believe premium security should feel disciplined, measured, and operationally effective — not performative.",
       },
     },
     {
-      label: "Pricing",
+      label: "Contact",
       href: "#contact",
     },
   ],
   hero: {
     title: "Security",
     subtitle:
-      "Blackridge designs and operates premium physical and integrated security systems for modern businesses, executive environments, and critical assets.",
+      "Blackridge delivers integrated security systems and operational protection for companies, executive environments, and high-value sites that require calm control and credible response.",
     panelTitle: "Protocols,\nnot posturing.",
     panelCopy:
-      "We build layered protection that feels calm, decisive, and boardroom-ready. Surveillance, access control, response planning, monitoring, and compliance all work together as one operating system — built to protect people, property, and reputation without visual noise or operational friction.",
+      "To us, security means reducing exposure before incidents happen, responding with clarity when they do, and building systems that remain dependable under pressure. That is why we design around monitoring, access control, escalation logic, resilience, and operational discipline — not marketing theatre.",
     primaryCta: "Request a Security Review",
     secondaryCta: "Explore Capabilities",
     stats: [
-      { value: "24/7", label: "Command monitoring" },
-      { value: "ISO", label: "Compliance-ready frameworks" },
-      { value: "<15m", label: "Critical response escalation" },
+      { value: "24/7", label: "Monitoring readiness" },
+      { value: "Rapid", label: "Incident escalation" },
+      { value: "Audit", label: "Operational visibility" },
     ],
   },
   servicesIntro:
-    "Built for companies that want confidence without chaos. Every system is structured, documented, monitored, and designed to scale.",
+    "Security should be built into the operation, not added as an afterthought. Blackridge structures protection across people, property, systems, and response.",
   services: [
     {
       title: "24/7 Monitoring",
       description:
-        "Always-on monitoring, intelligent alerting, escalation flows, and operator visibility for high-value sites.",
+        "Continuous monitoring, alert review, and escalation support to help detect and respond to threats without delay.",
     },
     {
-      title: "Access Control Design",
+      title: "Dedicated Security Oversight",
       description:
-        "Executive-grade entry architecture with credentialing, visitor logic, zoning, and audit-ready control.",
+        "Focused security guidance that reviews risk, strengthens controls, and supports clients with structured operational planning.",
     },
     {
-      title: "Incident Response",
+      title: "Integrated Infrastructure",
       description:
-        "Playbooks, escalation trees, response timing, and operational protocols for real-world threats.",
+        "Surveillance, access control, and site logic designed to work together as one coordinated security environment.",
     },
     {
-      title: "Executive Protection",
+      title: "Incident Response Planning",
       description:
-        "Discreet, high-trust protection planning for leadership teams, residences, and private movement.",
+        "Documented procedures, priority handling, escalation trees, and role-based workflows for real-world incidents.",
     },
     {
-      title: "Risk & Compliance",
+      title: "Operational Continuity",
       description:
-        "Structured reporting, policy alignment, site assessments, and controls that satisfy stakeholders.",
+        "Security systems and procedures designed to remain dependable under pressure and support uninterrupted operations.",
     },
     {
-      title: "Integrated Systems",
+      title: "Consultation & Risk Review",
       description:
-        "CCTV, access, perimeter awareness, and command workflows connected into a single calm layer.",
+        "Site assessments, exposure analysis, and security recommendations aligned to your business model and environment.",
     },
   ],
   capabilities: [
     {
       index: "01",
-      eyebrow: "Command",
-      title: "A single operational layer for complex environments.",
+      eyebrow: "Secure",
+      title: "Your built-in contingency layer.",
       description:
-        "We design command visibility across people, sites, devices, incidents, and escalation flows so decision-makers always know what matters first.",
+        "We maintain monitoring, response workflows, site reviews, and structured oversight so that protection remains active, not reactive.",
     },
     {
       index: "02",
-      eyebrow: "Access",
-      title:
-        "Entry architecture built for control, movement, and auditability.",
+      eyebrow: "Protected",
+      title: "Resilience designed into the system.",
       description:
-        "Credential logic, visitor pathways, executive zoning, restricted areas, and site-wide permissions are structured as one premium access experience.",
+        "We reduce single points of failure through layered thinking, fallback planning, documented protocols, and dependable operational structure.",
     },
     {
       index: "03",
-      eyebrow: "Surveillance",
-      title: "Observation designed for clarity, not camera clutter.",
+      eyebrow: "Controlled",
+      title: "Access and movement handled with precision.",
       description:
-        "Coverage planning, blind-spot reduction, event tagging, retention logic, and monitoring workflows work together to support fast decision-making.",
+        "Permissions, restricted zones, visitor logic, and controlled entry design help reduce unnecessary exposure while keeping environments functional.",
     },
     {
       index: "04",
-      eyebrow: "Response",
-      title: "Playbooks that perform when the environment changes.",
+      eyebrow: "Private",
+      title: "Visibility where needed. Restraint where it matters.",
       description:
-        "Threat escalation, communication trees, duty assignments, and site-specific actions are mapped in advance so teams respond without hesitation.",
+        "We build security environments that are auditable and controlled without making people, staff, or clients feel unnecessarily disrupted.",
+    },
+  ],
+  trustMarks: [
+    {
+      index: "01",
+      title: "Readiness by design",
+      description:
+        "Monitoring, response logic, and operational review are built into the model from the start.",
+    },
+    {
+      index: "02",
+      title: "Clear operational control",
+      description:
+        "We structure access, escalation, and movement so your environment remains controlled under pressure.",
+    },
+    {
+      index: "03",
+      title: "Measured visibility",
+      description:
+        "The right people see the right things at the right time without unnecessary operational noise.",
+    },
+  ],
+  imageModules: [
+    {
+      eyebrow: "Operations",
+      title: "Visibility where decisions happen.",
+      description:
+        "Use this space for a premium operations-room image, surveillance interface still, or control-centre photography that reinforces readiness and oversight.",
+      caption:
+        "Suggested image: monitoring room / operator desk / live environment",
+    },
+    {
+      eyebrow: "Access",
+      title: "Control that still feels refined.",
+      description:
+        "Use this space for close-up architectural imagery: controlled entry, executive access points, visitor flow design, or discreet high-end perimeter details.",
+      caption:
+        "Suggested image: controlled entry / gate / turnstile / executive arrival",
     },
   ],
   sectors: [
     {
       name: "Corporate Offices",
       description:
-        "Reception, floor access, executive movement, after-hours control, and discreet employee safety systems.",
+        "Reception security, employee movement, executive areas, after-hours control, and discreet workplace protection.",
     },
     {
       name: "Luxury Residential",
       description:
-        "Quiet, design-sensitive protection for estates, compounds, and private residences with elevated expectations.",
+        "Design-sensitive security for estates, residences, compounds, and private environments with elevated expectations.",
     },
     {
       name: "Retail & Hospitality",
       description:
-        "Customer-friendly security layers that protect staff, assets, and public-facing environments without friction.",
+        "Customer-facing environments protected through practical access, observation, and response without friction.",
     },
     {
       name: "Industrial Sites",
       description:
-        "Perimeter awareness, restricted access, response routing, and control-room visibility across operational zones.",
+        "Perimeter control, restricted zones, response routing, and operational visibility across larger working sites.",
     },
     {
       name: "Executive Protection",
       description:
-        "Movement planning, residence strategy, secure arrivals, and protection operations tailored to leadership profiles.",
+        "Movement planning, secure arrival strategy, residence coordination, and high-trust protection for leadership profiles.",
     },
     {
       name: "Multi-Site Operations",
       description:
-        "Standardized security logic across multiple branches, campuses, or properties with centralized reporting.",
+        "Consistent security logic across multiple branches, campuses, or properties with centralized oversight and reporting.",
     },
   ],
   process: [
@@ -360,25 +409,25 @@ export const siteContent: SiteContent = {
       index: "01",
       title: "Assess",
       description:
-        "We study the environment, people flow, asset exposure, blind spots, and operational pressure points.",
+        "We study the site, people flow, risk exposure, control gaps, operational pressure points, and expected security behavior.",
     },
     {
       index: "02",
-      title: "Architect",
+      title: "Design",
       description:
-        "We define the system logic, control layers, escalation pathways, and physical-to-digital coordination.",
+        "We define monitoring logic, access controls, escalation paths, response procedures, and the overall protection model.",
     },
     {
       index: "03",
       title: "Deploy",
       description:
-        "We implement with precision, document the system, and align stakeholders, operators, and decision-makers.",
+        "We implement with structure, align operators and stakeholders, and ensure the system works as one coordinated environment.",
     },
     {
       index: "04",
-      title: "Operate",
+      title: "Refine",
       description:
-        "We monitor, review, refine, and adapt continuously so the posture remains effective as the threat surface evolves.",
+        "We review performance, adjust protocols, and strengthen the posture over time as your risks and operations evolve.",
     },
   ],
   footer: [
@@ -387,7 +436,7 @@ export const siteContent: SiteContent = {
       links: [
         { label: "Monitoring", href: "#solutions" },
         { label: "Access Control", href: "#solutions" },
-        { label: "Risk & Compliance", href: "#insights" },
+        { label: "Incident Response", href: "#solutions" },
       ],
     },
     {
@@ -395,13 +444,13 @@ export const siteContent: SiteContent = {
       links: [
         { label: "About", href: "#contact" },
         { label: "Industries", href: "#proof" },
-        { label: "Contact", href: "#contact" },
+        { label: "Consultation", href: "#contact" },
       ],
     },
     {
       title: "Explore",
       links: [
-        { label: "Method", href: "#insights" },
+        { label: "Our Method", href: "#insights" },
         { label: "Capabilities", href: "#platform" },
         { label: "Security Review", href: "#contact" },
       ],
