@@ -1,306 +1,204 @@
 "use client";
 
-import { useMemo, useState } from "react";
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  LockKeyhole,
-  ShieldCheck,
-  Building2,
-  Check,
-} from "lucide-react";
+import { ArrowUpRight, LockKeyhole, Mail, Phone } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
-import { siteContent } from "@/content/site";
-
-const serviceOptions = [
-  "24/7 Monitoring",
-  "Access Control",
-  "Incident Response",
-  "Executive Protection",
-  "Risk Review",
-];
-
-const consultationItems = [
-  "Site and exposure review",
-  "Security posture discussion",
-  "Access and movement assessment",
-  "Recommended next-step priorities",
-];
 
 export function ContactSection() {
-  const [fullName, setFullName] = useState("");
-  const [company, setCompany] = useState("");
-  const [environment, setEnvironment] = useState("Corporate Office");
-  const [selectedServices, setSelectedServices] = useState<string[]>([
-    "24/7 Monitoring",
-  ]);
-
-  const summaryName = fullName.trim() || "Your team";
-  const summaryCompany = company.trim() || "Your company";
-
-  const summaryServices = useMemo(() => {
-    if (selectedServices.length === 0) return "General consultation";
-    return selectedServices.join(", ");
-  }, [selectedServices]);
-
-  const toggleService = (service: string) => {
-    setSelectedServices((current) =>
-      current.includes(service)
-        ? current.filter((item) => item !== service)
-        : [...current, service],
-    );
-  };
-
   return (
-    <section id="contact" className="pb-14 sm:pb-18 lg:pb-24">
+    <section
+      id="contact"
+      className="bg-[#f4f4f1] pb-16 pt-14 sm:pb-20 sm:pt-16 lg:pb-24 lg:pt-20"
+    >
       <div className="container-shell">
-        <div className="border border-black/12 bg-white">
-          <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
-            <Reveal className="border-b border-black/10 p-4 sm:p-6 lg:border-b-0 lg:border-r lg:p-8 xl:p-10">
-              <div className="inline-flex items-center gap-2 border border-[#8b6a45]/20 bg-[#8b6a45]/6 px-3 py-1.5">
+        <div className="border-t border-black/10 pt-8 sm:pt-10 lg:pt-12">
+          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+            <Reveal>
+              <div className="inline-flex items-center gap-2 border border-[#8b6a45]/18 bg-[#8b6a45]/6 px-3 py-1.5">
                 <LockKeyhole className="h-3.5 w-3.5 text-[#8b6a45]" />
                 <span className="text-[0.64rem] font-semibold uppercase tracking-[0.22em] text-[#8b6a45]">
-                  Consultation
+                  Contact
                 </span>
               </div>
 
-              <h2 className="font-display mt-4 max-w-[9ch] text-[clamp(2.2rem,11vw,4.8rem)] leading-[0.92] tracking-[-0.08em] text-black">
-                Let’s define the right security posture.
-              </h2>
+              <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_0.9fr] lg:items-start">
+                <h2 className="font-display max-w-[8ch] text-[clamp(2.8rem,11vw,5.8rem)] leading-[0.9] tracking-[-0.08em] text-black">
+                  Secure the property.
+                </h2>
 
-              <p className="mt-4 max-w-[34rem] text-[0.96rem] leading-7 text-black/66 sm:text-[1rem] sm:leading-8">
-                Use this form to start a structured conversation around your
-                site, risks, operations, and protection priorities.
-              </p>
-
-              <div className="mt-8 border-t border-black/10 pt-6">
-                <p className="text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-black/34">
-                  What the consultation covers
-                </p>
-
-                <div className="mt-4 grid gap-3">
-                  {consultationItems.map((item) => (
-                    <div key={item} className="flex items-start gap-3">
-                      <div className="mt-0.5 flex h-6 w-6 items-center justify-center border border-[#8b6a45]/20 bg-[#8b6a45]/6">
-                        <Check className="h-3.5 w-3.5 text-[#8b6a45]" />
-                      </div>
-                      <p className="text-[0.92rem] leading-6 text-black/64">
-                        {item}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mt-8 border-t border-black/10 pt-6">
-                <p className="text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-black/34">
-                  Live request summary
-                </p>
-
-                <div className="mt-4 border border-black/10 bg-[#f7f6f2] p-4 sm:p-5">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <p className="text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-black/34">
-                        Consultation request
-                      </p>
-                      <h3 className="font-display mt-3 text-[1.3rem] leading-[0.95] tracking-[-0.05em] text-black sm:text-[1.5rem]">
-                        {summaryCompany}
-                      </h3>
-                    </div>
-
-                    <div className="flex h-9 w-9 items-center justify-center border border-[#8b6a45]/20 bg-[#8b6a45]/6">
-                      <ShieldCheck className="h-4.5 w-4.5 text-[#8b6a45]" />
-                    </div>
-                  </div>
-
-                  <div className="mt-5 grid gap-4 border-t border-black/10 pt-4">
-                    <div>
-                      <p className="text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-black/34">
-                        Contact
-                      </p>
-                      <p className="mt-1 text-[0.92rem] leading-6 text-black/64">
-                        {summaryName}
-                      </p>
-                    </div>
-
-                    <div>
-                      <p className="text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-black/34">
-                        Environment
-                      </p>
-                      <p className="mt-1 text-[0.92rem] leading-6 text-black/64">
-                        {environment}
-                      </p>
-                    </div>
-
-                    <div>
-                      <p className="text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-black/34">
-                        Priority layers
-                      </p>
-                      <p className="mt-1 text-[0.92rem] leading-6 text-black/64">
-                        {summaryServices}
-                      </p>
-                    </div>
-                  </div>
+                <div className="max-w-[24rem] pt-1">
+                  <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-black/34">
+                    Let’s start the conversation
+                  </p>
+                  <p className="mt-3 text-[0.94rem] leading-7 text-black/58 sm:text-[0.98rem]">
+                    Tell us about the building, the access points, the current
+                    setup, and the protection issues you want to improve.
+                  </p>
                 </div>
               </div>
             </Reveal>
 
-            <Reveal className="p-4 sm:p-6 lg:p-8 xl:p-10">
-              <form className="grid gap-5">
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <label className="block">
-                    <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-black/40">
-                      Full name
-                    </span>
-                    <input
-                      type="text"
-                      value={fullName}
-                      onChange={(e) => setFullName(e.target.value)}
-                      placeholder="Your name"
-                      className="mt-3 h-12 w-full border border-black/12 bg-transparent px-4 text-[0.98rem] text-black outline-none placeholder:text-black/28 focus:border-black"
-                    />
-                  </label>
+            <Reveal>
+              <div className="border-t border-black/10 pt-6 lg:pt-8">
+                <h3 className="font-display text-[1.8rem] leading-[0.95] tracking-[-0.05em] text-black sm:text-[2.1rem]">
+                  Need help?
+                </h3>
 
-                  <label className="block">
-                    <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-black/40">
-                      Company
-                    </span>
-                    <input
-                      type="text"
-                      value={company}
-                      onChange={(e) => setCompany(e.target.value)}
-                      placeholder="Your company"
-                      className="mt-3 h-12 w-full border border-black/12 bg-transparent px-4 text-[0.98rem] text-black outline-none placeholder:text-black/28 focus:border-black"
-                    />
-                  </label>
+                <p className="mt-4 max-w-[26rem] text-[0.92rem] leading-7 text-black/56 sm:text-[0.96rem]">
+                  For building security reviews, monitoring questions, access
+                  control planning, or property protection consultations, use
+                  the form or contact us directly.
+                </p>
+
+                <div className="mt-8 grid gap-4">
+                  <div className="flex items-start gap-3 border-t border-black/10 pt-4">
+                    <Mail className="mt-1 h-4 w-4 text-[#8b6a45]" />
+                    <div>
+                      <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-black/34">
+                        Email
+                      </p>
+                      <p className="mt-1 text-[0.94rem] text-black/62">
+                        replace@blackridge.com
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3 border-t border-black/10 pt-4">
+                    <Phone className="mt-1 h-4 w-4 text-[#8b6a45]" />
+                    <div>
+                      <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-black/34">
+                        Phone
+                      </p>
+                      <p className="mt-1 text-[0.94rem] text-black/62">
+                        +27 XX XXX XXXX
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="grid gap-5 sm:grid-cols-2">
+                <Link
+                  href="#"
+                  className="mt-8 group inline-flex h-12 min-w-[228px] items-center justify-between border border-black/18 bg-transparent px-5 text-[0.74rem] font-semibold uppercase tracking-[0.16em] text-black transition duration-300 hover:border-black hover:bg-black hover:text-[#f4f4f1]"
+                >
+                  <span className="whitespace-nowrap">Open Direct Contact</span>
+                  <span className="ml-4 flex h-7 w-7 shrink-0 items-center justify-center border border-black/12 transition duration-300 group-hover:border-white/16">
+                    <ArrowUpRight className="h-4 w-4" />
+                  </span>
+                </Link>
+              </div>
+            </Reveal>
+          </div>
+
+          <div className="mt-14 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+            <Reveal>
+              <form className="grid gap-10">
+                <div className="grid gap-8 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10">
                   <label className="block">
-                    <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-black/40">
-                      Email
+                    <span className="text-[0.72rem] font-medium tracking-[0.01em] text-black/78">
+                      Full Name
+                    </span>
+                    <input
+                      type="text"
+                      placeholder=""
+                      className="mt-4 h-12 w-full border-0 border-b border-black/18 bg-transparent px-0 text-[1rem] text-black outline-none placeholder:text-black/26 focus:border-black"
+                    />
+                  </label>
+
+                  <label className="block">
+                    <span className="text-[0.72rem] font-medium tracking-[0.01em] text-black/78">
+                      Email Address
                     </span>
                     <input
                       type="email"
-                      placeholder="you@company.com"
-                      className="mt-3 h-12 w-full border border-black/12 bg-transparent px-4 text-[0.98rem] text-black outline-none placeholder:text-black/28 focus:border-black"
+                      placeholder=""
+                      className="mt-4 h-12 w-full border-0 border-b border-black/18 bg-transparent px-0 text-[1rem] text-black outline-none placeholder:text-black/26 focus:border-black"
                     />
                   </label>
 
                   <label className="block">
-                    <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-black/40">
+                    <span className="text-[0.72rem] font-medium tracking-[0.01em] text-black/78">
                       Phone
                     </span>
                     <input
                       type="tel"
-                      placeholder="+27 ..."
-                      className="mt-3 h-12 w-full border border-black/12 bg-transparent px-4 text-[0.98rem] text-black outline-none placeholder:text-black/28 focus:border-black"
+                      placeholder=""
+                      className="mt-4 h-12 w-full border-0 border-b border-black/18 bg-transparent px-0 text-[1rem] text-black outline-none placeholder:text-black/26 focus:border-black"
+                    />
+                  </label>
+
+                  <label className="block">
+                    <span className="text-[0.72rem] font-medium tracking-[0.01em] text-black/78">
+                      Company / Property Owner
+                    </span>
+                    <input
+                      type="text"
+                      placeholder=""
+                      className="mt-4 h-12 w-full border-0 border-b border-black/18 bg-transparent px-0 text-[1rem] text-black outline-none placeholder:text-black/26 focus:border-black"
                     />
                   </label>
                 </div>
 
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <label className="block">
-                    <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-black/40">
-                      Environment
-                    </span>
-                    <select
-                      value={environment}
-                      onChange={(e) => setEnvironment(e.target.value)}
-                      className="mt-3 h-12 w-full border border-black/12 bg-transparent px-4 text-[0.98rem] text-black outline-none focus:border-black"
-                    >
-                      <option>Corporate Office</option>
-                      <option>Luxury Residential</option>
-                      <option>Retail & Hospitality</option>
-                      <option>Industrial Site</option>
-                      <option>Multi-Site Operation</option>
-                      <option>Executive Protection</option>
-                    </select>
-                  </label>
-
-                  <label className="block">
-                    <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-black/40">
-                      Timeline
-                    </span>
-                    <select className="mt-3 h-12 w-full border border-black/12 bg-transparent px-4 text-[0.98rem] text-black outline-none focus:border-black">
-                      <option>Immediate</option>
-                      <option>Within 30 days</option>
-                      <option>Within 90 days</option>
-                      <option>Exploratory</option>
-                    </select>
-                  </label>
-                </div>
-
-                <div>
-                  <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-black/40">
-                    Priority services
-                  </span>
-
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {serviceOptions.map((service) => {
-                      const selected = selectedServices.includes(service);
-
-                      return (
-                        <button
-                          key={service}
-                          type="button"
-                          onClick={() => toggleService(service)}
-                          className={`inline-flex items-center gap-2 border px-3 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.14em] transition ${
-                            selected
-                              ? "border-[#8b6a45]/30 bg-[#8b6a45]/10 text-[#6f5132]"
-                              : "border-black/12 bg-transparent text-black/58 hover:border-black/20 hover:text-black"
-                          }`}
-                        >
-                          <Building2 className="h-3.5 w-3.5" />
-                          <span>{service}</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
                 <label className="block">
-                  <span className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-black/40">
-                    Project overview
+                  <span className="text-[0.72rem] font-medium tracking-[0.01em] text-black/78">
+                    Property Type
                   </span>
-                  <textarea
-                    rows={6}
-                    placeholder="Tell us about your site, risk profile, existing setup, or what you want to improve."
-                    className="mt-3 w-full border border-black/12 bg-transparent px-4 py-4 text-[0.98rem] text-black outline-none placeholder:text-black/28 focus:border-black"
+                  <input
+                    type="text"
+                    placeholder="Office building, apartment block, retail property, warehouse..."
+                    className="mt-4 h-12 w-full border-0 border-b border-black/18 bg-transparent px-0 text-[1rem] text-black outline-none placeholder:text-black/30 focus:border-black"
                   />
                 </label>
 
-                <div className="flex flex-col gap-4 border-t border-black/10 pt-5 sm:flex-row sm:items-center sm:justify-between">
-                  <p className="max-w-[26rem] text-[0.84rem] leading-6 text-black/46">
-                    This form is ready for your real backend or email workflow.
-                    Connect it to your API route before launch.
-                  </p>
+                <label className="block">
+                  <span className="text-[0.72rem] font-medium tracking-[0.01em] text-black/78">
+                    Message
+                  </span>
+                  <textarea
+                    rows={4}
+                    placeholder="Tell us about the building, access points, perimeter, current systems, and the security challenges you want to solve."
+                    className="mt-4 min-h-[120px] w-full resize-none border-0 border-b border-black/18 bg-transparent px-0 py-0 text-[1rem] leading-8 text-black outline-none placeholder:text-black/30 focus:border-black"
+                  />
+                </label>
 
-                  <button type="submit" className="ui-button ui-button-solid">
-                    <span>Request Consultation</span>
-                    <ArrowUpRight className="h-4 w-4" />
+                <div className="flex flex-col gap-5 pt-2 sm:flex-row sm:items-center sm:justify-between">
+                  <button
+                    type="submit"
+                    className="inline-flex h-12 items-center justify-center border border-black bg-black px-8 text-[0.74rem] font-semibold uppercase tracking-[0.16em] text-white transition hover:bg-transparent hover:text-black"
+                  >
+                    Send Request
                   </button>
+
+                  <p className="max-w-[26rem] text-[0.82rem] leading-6 text-black/42">
+                    Connect this form to your real email or API route before
+                    launch.
+                  </p>
                 </div>
               </form>
+            </Reveal>
 
-              <div className="mt-6 flex items-center gap-3 border-t border-black/10 pt-5">
-                <div className="flex h-8 w-8 items-center justify-center border border-[#8b6a45]/20 bg-[#8b6a45]/6">
-                  <LockKeyhole className="h-4 w-4 text-[#8b6a45]" />
+            <Reveal>
+              <div className="border-t border-black/10 pt-6 lg:pt-0">
+                <div className="lg:pl-6">
+                  <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-black/34">
+                    Building security scope
+                  </p>
+
+                  <div className="mt-6 grid gap-5">
+                    {[
+                      "Office buildings and commercial properties",
+                      "Apartment blocks and residential complexes",
+                      "Warehouses and industrial facilities",
+                      "Access control, monitoring, and perimeter planning",
+                    ].map((item) => (
+                      <div
+                        key={item}
+                        className="border-t border-black/10 pt-4 text-[0.94rem] leading-7 text-black/58"
+                      >
+                        {item}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <p className="text-[0.84rem] leading-6 text-black/46">
-                  {siteContent.companyName} consultation requests should route
-                  to your real email or CRM workflow before launch.
-                </p>
-              </div>
-
-              <div className="mt-4">
-                <Link
-                  href="#"
-                  className="inline-flex items-center gap-2 text-[0.76rem] font-semibold uppercase tracking-[0.16em] text-black/56 transition hover:text-black"
-                >
-                  <span>Need a direct contact route</span>
-                  <ArrowUpRight className="h-4 w-4" />
-                </Link>
               </div>
             </Reveal>
           </div>

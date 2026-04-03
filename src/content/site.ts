@@ -59,19 +59,6 @@ type FooterGroup = {
   }[];
 };
 
-type TrustMark = {
-  index: string;
-  title: string;
-  description: string;
-};
-
-type ImageModule = {
-  eyebrow: string;
-  title: string;
-  description: string;
-  caption: string;
-};
-
 type SiteContent = {
   companyName: string;
   nav: NavItem[];
@@ -89,8 +76,6 @@ type SiteContent = {
   capabilities: Capability[];
   sectors: Sector[];
   process: ProcessStep[];
-  trustMarks: TrustMark[];
-  imageModules: ImageModule[];
   footer: FooterGroup[];
 };
 
@@ -98,156 +83,156 @@ export const siteContent: SiteContent = {
   companyName: "BLACKRIDGE",
   nav: [
     {
-      label: "Solutions",
+      label: "Services",
       href: "#solutions",
       trailing: "+",
       menu: {
         sections: [
           {
-            title: "Core Services",
+            title: "Building Security",
             links: [
               { label: "24/7 Monitoring", href: "#solutions" },
               { label: "Access Control", href: "#solutions" },
+              { label: "Perimeter Protection", href: "#solutions" },
               { label: "Incident Response", href: "#solutions" },
-              { label: "Executive Protection", href: "#solutions" },
             ],
           },
           {
             title: "Systems",
             links: [
-              { label: "Integrated Surveillance", href: "#platform" },
-              { label: "Perimeter Security", href: "#platform" },
-              { label: "Visitor Control", href: "#platform" },
-              { label: "Command Visibility", href: "#platform" },
+              { label: "CCTV Integration", href: "#platform" },
+              { label: "Gate & Entry Control", href: "#platform" },
+              { label: "Visitor Management", href: "#platform" },
+              { label: "Alarm Integration", href: "#platform" },
             ],
           },
           {
-            title: "Advisory",
+            title: "Support",
             links: [
+              { label: "Site Assessments", href: "#insights" },
               { label: "Risk Reviews", href: "#insights" },
-              { label: "Operational Planning", href: "#insights" },
               { label: "Security Consultation", href: "#contact" },
             ],
           },
         ],
-        asideTitle: "Premium protection architecture",
-        asideLabel: "Integrated protection",
+        asideTitle: "Security for buildings and facilities",
+        asideLabel: "Protection systems",
         asideCopy:
-          "Modern security systems designed to protect people, property, operations, and reputation without unnecessary complexity.",
+          "Blackridge helps secure buildings through monitoring, controlled access, perimeter protection, and practical response planning.",
       },
     },
     {
-      label: "Platform",
+      label: "Systems",
       href: "#platform",
       trailing: "+",
       menu: {
         sections: [
           {
-            title: "Visibility",
+            title: "Monitoring",
             links: [
-              { label: "Live Site Awareness", href: "#platform" },
-              { label: "Threat Escalation", href: "#platform" },
+              { label: "Live Visibility", href: "#platform" },
+              { label: "Event Escalation", href: "#platform" },
               { label: "Operator Oversight", href: "#platform" },
             ],
           },
           {
             title: "Control",
             links: [
-              { label: "Credential Logic", href: "#platform" },
-              { label: "Restricted Zones", href: "#platform" },
+              { label: "Restricted Entry", href: "#platform" },
+              { label: "Building Access Rules", href: "#platform" },
               { label: "Response Workflows", href: "#platform" },
             ],
           },
           {
-            title: "Assurance",
+            title: "Review",
             links: [
               { label: "Reporting", href: "#proof" },
-              { label: "Review Cycles", href: "#insights" },
+              { label: "Operational Reviews", href: "#insights" },
               { label: "Consultation", href: "#contact" },
             ],
           },
         ],
-        asideTitle: "A calmer control layer",
+        asideTitle: "A practical control layer for buildings",
         asideLabel: "Operational clarity",
         asideCopy:
-          "One structured layer for monitoring, control, response, and decision-making across modern security environments.",
+          "We structure visibility, access, and escalation so buildings stay protected without unnecessary complexity.",
       },
     },
     {
-      label: "Industries",
+      label: "Properties",
       href: "#proof",
       trailing: "+",
       menu: {
         sections: [
           {
-            title: "Sites",
+            title: "Commercial",
             links: [
-              { label: "Corporate Offices", href: "#proof" },
-              { label: "Luxury Residential", href: "#proof" },
-              { label: "Retail & Hospitality", href: "#proof" },
+              { label: "Office Buildings", href: "#proof" },
+              { label: "Retail Buildings", href: "#proof" },
+              { label: "Warehouses", href: "#proof" },
             ],
           },
           {
-            title: "Operations",
+            title: "Residential",
             links: [
+              { label: "Apartment Blocks", href: "#proof" },
+              { label: "Estates", href: "#proof" },
+              { label: "Complexes", href: "#proof" },
+            ],
+          },
+          {
+            title: "Special Use",
+            links: [
+              { label: "Schools", href: "#proof" },
               { label: "Industrial Sites", href: "#proof" },
-              { label: "Multi-Site Businesses", href: "#proof" },
-              { label: "Executive Movement", href: "#proof" },
-            ],
-          },
-          {
-            title: "Applications",
-            links: [
-              { label: "Asset Protection", href: "#proof" },
-              { label: "Business Continuity", href: "#proof" },
-              { label: "Discreet Security", href: "#proof" },
+              { label: "Mixed-Use Property", href: "#proof" },
             ],
           },
         ],
-        asideTitle: "Security designed around the environment",
-        asideLabel: "Tailored posture",
+        asideTitle: "Protection designed around the property",
+        asideLabel: "Building types",
         asideCopy:
-          "Every environment behaves differently. We design around movement, exposure, risk, and operational pressure.",
+          "Different properties have different pressure points. We design around entrances, blind spots, movement, and risk.",
       },
     },
     {
-      label: "Explore",
+      label: "Process",
       href: "#insights",
       trailing: "+",
       menu: {
         sections: [
           {
-            title: "Company",
+            title: "Approach",
             links: [
-              { label: "About Blackridge", href: "#contact" },
-              { label: "Our Method", href: "#insights" },
-              { label: "Why Blackridge", href: "#proof" },
+              { label: "Site Review", href: "#insights" },
+              { label: "System Design", href: "#insights" },
+              { label: "Installation Planning", href: "#insights" },
             ],
           },
           {
-            title: "Resources",
+            title: "Support",
             links: [
-              { label: "Security Review", href: "#contact" },
-              { label: "Consultation", href: "#contact" },
-              { label: "Contact", href: "#contact" },
+              { label: "Monitoring Setup", href: "#insights" },
+              { label: "Response Planning", href: "#insights" },
+              { label: "Building Security Consultation", href: "#contact" },
             ],
           },
           {
-            title: "Perspective",
+            title: "Contact",
             links: [
               {
-                label: "Protocols, not posturing",
-                href: "#insights",
+                label: "Request a security review",
+                href: "#contact",
                 description:
-                  "A practical approach to security built on readiness, response, and controlled execution.",
+                  "Start with a structured conversation about your building, systems, and security risks.",
               },
             ],
           },
         ],
-        asideTitle: "Protection without theatre",
-        asideLabel: "Our point of view",
+        asideTitle: "Simple, structured execution",
+        asideLabel: "Our method",
         asideCopy:
-          "We believe premium security should feel disciplined, measured, and operationally effective — not performative.",
+          "We assess the building, design the right protection setup, implement the system, and refine it over time.",
       },
     },
     {
@@ -256,203 +241,165 @@ export const siteContent: SiteContent = {
     },
   ],
   hero: {
-    title: "Security",
+    title: "Building Security",
     subtitle:
-      "Blackridge delivers integrated security systems and operational protection for companies, executive environments, and high-value sites that require calm control and credible response.",
-    panelTitle: "Protocols,\nnot posturing.",
+      "Blackridge provides security systems and protection services for buildings, facilities, and properties that need controlled access, active monitoring, and dependable response.",
+    panelTitle: "Protect the building.\nControl the risk.",
     panelCopy:
-      "To us, security means reducing exposure before incidents happen, responding with clarity when they do, and building systems that remain dependable under pressure. That is why we design around monitoring, access control, escalation logic, resilience, and operational discipline — not marketing theatre.",
+      "We help property owners, managers, and businesses protect buildings through surveillance, access control, perimeter protection, and practical response planning. Our focus is simple: reduce weak points, improve visibility, and keep the building secure.",
     primaryCta: "Request a Security Review",
-    secondaryCta: "Explore Capabilities",
+    secondaryCta: "View Services",
     stats: [
-      { value: "24/7", label: "Monitoring readiness" },
-      { value: "Rapid", label: "Incident escalation" },
-      { value: "Audit", label: "Operational visibility" },
+      { value: "24/7", label: "Monitoring support" },
+      { value: "Access", label: "Controlled entry" },
+      { value: "Rapid", label: "Response escalation" },
     ],
   },
   servicesIntro:
-    "Security should be built into the operation, not added as an afterthought. Blackridge structures protection across people, property, systems, and response.",
+    "Everything we do is focused on protecting buildings and the people, systems, and operations inside them.",
   services: [
     {
       title: "24/7 Monitoring",
       description:
-        "Continuous monitoring, alert review, and escalation support to help detect and respond to threats without delay.",
+        "Ongoing monitoring and event escalation support to improve visibility and response readiness.",
     },
     {
-      title: "Dedicated Security Oversight",
+      title: "Access Control",
       description:
-        "Focused security guidance that reviews risk, strengthens controls, and supports clients with structured operational planning.",
+        "Controlled entry systems for staff, visitors, contractors, and restricted areas within the building.",
     },
     {
-      title: "Integrated Infrastructure",
+      title: "Perimeter Protection",
       description:
-        "Surveillance, access control, and site logic designed to work together as one coordinated security environment.",
+        "Gate control, perimeter awareness, and layered entry security to reduce unauthorized access.",
     },
     {
-      title: "Incident Response Planning",
+      title: "CCTV & Surveillance",
       description:
-        "Documented procedures, priority handling, escalation trees, and role-based workflows for real-world incidents.",
+        "Camera coverage planned around entrances, circulation routes, blind spots, and high-risk areas.",
     },
     {
-      title: "Operational Continuity",
+      title: "Alarm & System Integration",
       description:
-        "Security systems and procedures designed to remain dependable under pressure and support uninterrupted operations.",
+        "Integrated security systems that connect alerts, monitoring, access points, and site response.",
     },
     {
-      title: "Consultation & Risk Review",
+      title: "Risk Reviews",
       description:
-        "Site assessments, exposure analysis, and security recommendations aligned to your business model and environment.",
+        "Building-focused security assessments to identify vulnerabilities and improve protection planning.",
     },
   ],
   capabilities: [
     {
       index: "01",
-      eyebrow: "Secure",
-      title: "Your built-in contingency layer.",
+      eyebrow: "Observe",
+      title: "Visibility across the building.",
       description:
-        "We maintain monitoring, response workflows, site reviews, and structured oversight so that protection remains active, not reactive.",
+        "We help create better visibility across entrances, common areas, service zones, and vulnerable points.",
     },
     {
       index: "02",
-      eyebrow: "Protected",
-      title: "Resilience designed into the system.",
+      eyebrow: "Control",
+      title: "Entry points managed with intent.",
       description:
-        "We reduce single points of failure through layered thinking, fallback planning, documented protocols, and dependable operational structure.",
+        "We structure access so movement through the property is controlled, trackable, and practical.",
     },
     {
       index: "03",
-      eyebrow: "Controlled",
-      title: "Access and movement handled with precision.",
+      eyebrow: "Protect",
+      title: "Perimeter and interior layers working together.",
       description:
-        "Permissions, restricted zones, visitor logic, and controlled entry design help reduce unnecessary exposure while keeping environments functional.",
+        "Building protection is stronger when external boundaries and internal controls support each other.",
     },
     {
       index: "04",
-      eyebrow: "Private",
-      title: "Visibility where needed. Restraint where it matters.",
+      eyebrow: "Respond",
+      title: "Clear actions when something happens.",
       description:
-        "We build security environments that are auditable and controlled without making people, staff, or clients feel unnecessarily disrupted.",
-    },
-  ],
-  trustMarks: [
-    {
-      index: "01",
-      title: "Readiness by design",
-      description:
-        "Monitoring, response logic, and operational review are built into the model from the start.",
-    },
-    {
-      index: "02",
-      title: "Clear operational control",
-      description:
-        "We structure access, escalation, and movement so your environment remains controlled under pressure.",
-    },
-    {
-      index: "03",
-      title: "Measured visibility",
-      description:
-        "The right people see the right things at the right time without unnecessary operational noise.",
-    },
-  ],
-  imageModules: [
-    {
-      eyebrow: "Operations",
-      title: "Visibility where decisions happen.",
-      description:
-        "Use this space for a premium operations-room image, surveillance interface still, or control-centre photography that reinforces readiness and oversight.",
-      caption:
-        "Suggested image: monitoring room / operator desk / live environment",
-    },
-    {
-      eyebrow: "Access",
-      title: "Control that still feels refined.",
-      description:
-        "Use this space for close-up architectural imagery: controlled entry, executive access points, visitor flow design, or discreet high-end perimeter details.",
-      caption:
-        "Suggested image: controlled entry / gate / turnstile / executive arrival",
+        "We help define how threats are escalated, handled, and communicated when incidents occur.",
     },
   ],
   sectors: [
     {
-      name: "Corporate Offices",
+      name: "Office Buildings",
       description:
-        "Reception security, employee movement, executive areas, after-hours control, and discreet workplace protection.",
+        "Protection for reception areas, staff entry points, common spaces, parking, and after-hours access.",
     },
     {
-      name: "Luxury Residential",
+      name: "Apartment Blocks",
       description:
-        "Design-sensitive security for estates, residences, compounds, and private environments with elevated expectations.",
+        "Security systems for shared entrances, resident access, visitor control, and building perimeter safety.",
     },
     {
-      name: "Retail & Hospitality",
+      name: "Retail Properties",
       description:
-        "Customer-facing environments protected through practical access, observation, and response without friction.",
+        "Practical protection for customer-facing buildings with controlled entry, monitoring, and response support.",
     },
     {
-      name: "Industrial Sites",
+      name: "Warehouses",
       description:
-        "Perimeter control, restricted zones, response routing, and operational visibility across larger working sites.",
+        "Coverage for gates, loading points, restricted storage zones, and larger operational buildings.",
     },
     {
-      name: "Executive Protection",
+      name: "Industrial Facilities",
       description:
-        "Movement planning, secure arrival strategy, residence coordination, and high-trust protection for leadership profiles.",
+        "Structured control across perimeter zones, staff access, vehicle movement, and high-risk areas.",
     },
     {
-      name: "Multi-Site Operations",
+      name: "Schools & Mixed-Use Sites",
       description:
-        "Consistent security logic across multiple branches, campuses, or properties with centralized oversight and reporting.",
+        "Security planning for buildings with multiple users, varied movement patterns, and shared access points.",
     },
   ],
   process: [
     {
       index: "01",
-      title: "Assess",
+      title: "Assess the building",
       description:
-        "We study the site, people flow, risk exposure, control gaps, operational pressure points, and expected security behavior.",
+        "We review entrances, circulation, blind spots, weak points, and operational risks across the property.",
     },
     {
       index: "02",
-      title: "Design",
+      title: "Design the system",
       description:
-        "We define monitoring logic, access controls, escalation paths, response procedures, and the overall protection model.",
+        "We define the right mix of monitoring, access control, surveillance, and perimeter protection.",
     },
     {
       index: "03",
-      title: "Deploy",
+      title: "Implement and configure",
       description:
-        "We implement with structure, align operators and stakeholders, and ensure the system works as one coordinated environment.",
+        "We help structure the system so building protection is practical, controlled, and usable day to day.",
     },
     {
       index: "04",
-      title: "Refine",
+      title: "Review and improve",
       description:
-        "We review performance, adjust protocols, and strengthen the posture over time as your risks and operations evolve.",
+        "We refine the setup over time as the building, usage patterns, and risk conditions change.",
     },
   ],
   footer: [
     {
-      title: "Solutions",
+      title: "Services",
       links: [
         { label: "Monitoring", href: "#solutions" },
         { label: "Access Control", href: "#solutions" },
-        { label: "Incident Response", href: "#solutions" },
+        { label: "Perimeter Protection", href: "#solutions" },
       ],
     },
     {
-      title: "Company",
+      title: "Properties",
       links: [
-        { label: "About", href: "#contact" },
-        { label: "Industries", href: "#proof" },
-        { label: "Consultation", href: "#contact" },
+        { label: "Office Buildings", href: "#proof" },
+        { label: "Residential Buildings", href: "#proof" },
+        { label: "Industrial Sites", href: "#proof" },
       ],
     },
     {
-      title: "Explore",
+      title: "Contact",
       links: [
-        { label: "Our Method", href: "#insights" },
-        { label: "Capabilities", href: "#platform" },
         { label: "Security Review", href: "#contact" },
+        { label: "Consultation", href: "#contact" },
+        { label: "Get in touch", href: "#contact" },
       ],
     },
   ],

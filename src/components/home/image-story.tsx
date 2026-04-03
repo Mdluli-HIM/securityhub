@@ -13,20 +13,20 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const modules = [
   {
-    eyebrow: "Operations",
-    title: "Visibility where decisions happen.",
+    eyebrow: "Monitoring",
+    title: "Visibility across the building.",
     description:
-      "This section should carry one strong operational image: monitoring activity, a control surface, or an environment where response and oversight feel real.",
+      "Use this section for a control-room image, building surveillance view, or monitoring environment that reinforces live visibility across entrances, common areas, and vulnerable points.",
     src: "/images/security-ops.jpg",
-    caption: "Monitoring / command / operational visibility",
+    caption: "Building monitoring / CCTV / operational visibility",
   },
   {
     eyebrow: "Access",
-    title: "Control that still feels refined.",
+    title: "Entry points that stay controlled.",
     description:
-      "This section should show premium control in practice: entry points, executive arrival, visitor logic, or clean architectural security integration.",
+      "Use this section for a premium building-access image: gate control, entrance architecture, reception control, or layered access systems that show how the property is protected.",
     src: "/images/security-access.jpg",
-    caption: "Controlled entry / movement / access architecture",
+    caption: "Access control / perimeter / building entry",
   },
 ];
 
@@ -67,18 +67,18 @@ export function ImageStory() {
             <div className="inline-flex items-center gap-2 border border-[#8b6a45]/20 bg-[#8b6a45]/6 px-3 py-1.5">
               <LockKeyhole className="h-3.5 w-3.5 text-[#8b6a45]" />
               <span className="text-[0.64rem] font-semibold uppercase tracking-[0.22em] text-[#8b6a45]">
-                Visual Storytelling
+                Building Protection
               </span>
             </div>
 
             <h2 className="font-display mt-4 max-w-[9ch] text-[clamp(2.2rem,11vw,4.8rem)] leading-[0.94] tracking-[-0.07em] text-black">
-              Images that make the system feel real.
+              Images that show how the building is protected.
             </h2>
 
             <p className="mt-4 max-w-[38rem] text-[0.96rem] leading-7 text-black/66 sm:text-[1rem] sm:leading-8">
-              These should not feel like stock-image filler. They should feel
-              like operational evidence, architectural control, and premium
-              oversight.
+              These visuals should support the story of building security —
+              entrances, surveillance, access control, perimeter protection, and
+              live visibility.
             </p>
           </Reveal>
 
@@ -147,7 +147,7 @@ export function ImageStory() {
                       href="#contact"
                       className="mt-6 inline-flex items-center gap-2 text-[0.76rem] font-semibold uppercase tracking-[0.16em] text-black/58 transition hover:text-black"
                     >
-                      <span>Discuss this layer</span>
+                      <span>Discuss this property layer</span>
                       <ArrowUpRight className="h-4 w-4" />
                     </Link>
                   </div>

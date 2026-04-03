@@ -128,10 +128,10 @@ export function SecurityHero() {
           </div>
         </div>
 
-        <div className="hero-panel relative overflow-hidden border border-black/12 bg-black text-white">
-          <div className="hero-bg-shift absolute inset-0 opacity-90">
-            <div className="grid-faint absolute inset-0" />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.12),rgba(0,0,0,0.05)_22%,rgba(0,0,0,0.72)_70%,#000_100%)]" />
+        <div className="hero-panel relative overflow-hidden border border-black/12 bg-[#08090b] text-white">
+          <div className="hero-bg-shift absolute inset-0">
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,#0a0a0c_0%,#070709_100%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(255,255,255,0.035),transparent_0,transparent_26%),radial-gradient(circle_at_82%_12%,rgba(255,255,255,0.02),transparent_0,transparent_20%)]" />
           </div>
 
           <div className="relative grid gap-8 px-4 py-5 sm:px-6 sm:py-7 md:px-8 md:py-8 lg:grid-cols-[0.92fr_1.08fr] lg:gap-14 lg:px-14 lg:py-14">
