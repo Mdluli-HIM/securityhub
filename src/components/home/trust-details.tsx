@@ -1,3 +1,5 @@
+"use client";
+
 import { LockKeyhole, ShieldCheck, Eye } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
 import { siteContent } from "@/content/site";
@@ -31,13 +33,14 @@ export function TrustDetails() {
           <div className="grid gap-3 sm:gap-4 md:grid-cols-3">
             {siteContent.trustMarks.map((item, index) => {
               const Icon = icons[index] ?? LockKeyhole;
+              const displayIndex = String(index + 1).padStart(2, "0");
 
               return (
-                <Reveal key={item.index}>
+                <Reveal key={`${item.title}-${index}`}>
                   <article className="ui-card p-4 sm:p-5 lg:p-6">
                     <div className="flex items-center justify-between">
                       <span className="text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-black/34">
-                        {item.index}
+                        {displayIndex}
                       </span>
 
                       <div className="flex h-8 w-8 items-center justify-center border border-[#8b6a45]/20 bg-[#8b6a45]/6">
