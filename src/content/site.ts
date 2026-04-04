@@ -59,6 +59,11 @@ type FooterGroup = {
   }[];
 };
 
+type TrustMark = {
+  title: string;
+  description: string;
+};
+
 type SiteContent = {
   companyName: string;
   nav: NavItem[];
@@ -76,6 +81,7 @@ type SiteContent = {
   capabilities: Capability[];
   sectors: Sector[];
   process: ProcessStep[];
+  trustMarks: TrustMark[];
   footer: FooterGroup[];
 };
 
@@ -375,6 +381,23 @@ export const siteContent: SiteContent = {
       title: "Review and improve",
       description:
         "We refine the setup over time as the building, usage patterns, and risk conditions change.",
+    },
+  ],
+  trustMarks: [
+    {
+      title: "Controlled Entry",
+      description:
+        "Access systems designed to keep building entry points managed, traceable, and practical.",
+    },
+    {
+      title: "24/7 Monitoring",
+      description:
+        "Monitoring support focused on visibility, escalation, and ongoing protection across the property.",
+    },
+    {
+      title: "Perimeter Protection",
+      description:
+        "Layered building security around gates, boundaries, parking zones, and exterior access points.",
     },
   ],
   footer: [
