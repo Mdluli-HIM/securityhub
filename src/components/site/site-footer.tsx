@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight, LockKeyhole, Mail, Phone, MapPin } from "lucide-react";
+import { LockKeyhole } from "lucide-react";
 import { siteContent } from "@/content/site";
 
 const topGroups = [
@@ -46,12 +46,21 @@ const bottomGroups = [
     links: ["About Blackridge", "Our Method", "Services", "Contact"],
   },
   {
-    title: "Launch Notes",
+    title: "Core Services",
     links: [
-      "Replace with your phone number",
-      "Replace with your email address",
-      "Replace with your operating area",
-      "Replace with your social links",
+      "Monitoring",
+      "Access Control",
+      "Perimeter Protection",
+      "Risk Reviews",
+    ],
+  },
+  {
+    title: "Property Types",
+    links: [
+      "Office Buildings",
+      "Apartment Blocks",
+      "Retail Properties",
+      "Industrial Facilities",
     ],
   },
 ];
@@ -142,60 +151,6 @@ export function SiteFooter() {
                 </div>
               </div>
             ))}
-
-            <div>
-              <p className="text-[0.64rem] font-semibold uppercase tracking-[0.26em] text-[#f3efe7]/36 sm:text-[0.68rem]">
-                Direct Contact
-              </p>
-
-              <div className="mt-6 grid gap-5 border-t border-white/10 pt-6 sm:mt-8">
-                <div className="flex items-start gap-3">
-                  <Mail className="mt-1 h-4 w-4 text-[#9db6cf]" />
-                  <div>
-                    <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[#f3efe7]/34">
-                      Email
-                    </p>
-                    <p className="mt-1 text-[0.96rem] text-[#f3efe7]/74">
-                      replace@blackridge.com
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 border-t border-white/10 pt-5">
-                  <Phone className="mt-1 h-4 w-4 text-[#9db6cf]" />
-                  <div>
-                    <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[#f3efe7]/34">
-                      Phone
-                    </p>
-                    <p className="mt-1 text-[0.96rem] text-[#f3efe7]/74">
-                      +27 XX XXX XXXX
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 border-t border-white/10 pt-5">
-                  <MapPin className="mt-1 h-4 w-4 text-[#9db6cf]" />
-                  <div>
-                    <p className="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[#f3efe7]/34">
-                      Service Area
-                    </p>
-                    <p className="mt-1 text-[0.96rem] text-[#f3efe7]/74">
-                      Replace with your operating area
-                    </p>
-                  </div>
-                </div>
-
-                <Link
-                  href="#contact"
-                  className="group mt-2 inline-flex h-12 min-w-[220px] items-center justify-between border border-white/14 bg-white/[0.04] px-5 text-[0.74rem] font-semibold uppercase tracking-[0.16em] text-[#f3efe7] transition duration-300 hover:border-white/24 hover:bg-[#f3efe7] hover:text-[#0d1822]"
-                >
-                  <span>Request Security Review</span>
-                  <span className="ml-4 flex h-7 w-7 items-center justify-center border border-white/14 transition duration-300 group-hover:border-[#0d1822]/14">
-                    <ArrowUpRight className="h-4 w-4" />
-                  </span>
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </div>

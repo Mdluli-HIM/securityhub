@@ -28,12 +28,28 @@ export function SiteLoader() {
   const [dismissed, setDismissed] = useState(false);
   const [exiting, setExiting] = useState(false);
 
-  const shouldShow = hydrated && !dismissed;
+  const hasSeenLoader =
+    hydrated &&
+    typeof window !== "undefined" &&
+    localStorage.getItem("blackridge-loader-seen") === "1";
+
+  const shouldShow = hydrated && !dismissed && !hasSeenLoader;
+
+  useEffect(() => {
+    if (!hydrated) return;
+
+    document.documentElement.dataset.loaderState = shouldShow
+      ? "active"
+      : "done";
+
+    if (!shouldShow) {
+      document.body.style.overflow = "";
+    }
+  }, [hydrated, shouldShow]);
 
   useEffect(() => {
     if (!shouldShow) return;
 
-    document.documentElement.dataset.loaderState = "active";
     document.body.style.overflow = "hidden";
 
     const timer = window.setTimeout(() => {
@@ -43,68 +59,6 @@ export function SiteLoader() {
     return () => {
       window.clearTimeout(timer);
       document.body.style.overflow = "";
-      document.documentElement.dataset.loaderState = "done";
-    };
-  }, [shouldShow]);
-
-  useLayoutEffect(() => {
-    if (!shouldShow || !root.current) return;
-
-    gsap.set(".loader-line", {
-      scaleX: 0,
-      transformOrigin: "left center",
-    });
-
-    const tl = gsap.timeline({
-      defaults: { ease: "power2.out" },
-    });
-
-    tl.fromTo(
-      ".loader-badge",
-      { opacity: 0, y: 8 },
-      { opacity: 1, y: 0, duration: 0.6 },
-    )
-      .fromTo(
-        ".loader-title-line",
-        { opacity: 0, y: 16 },
-        { opacity: 1, y: 0, duration: 0.9, stagger: 0.08 },
-        "-=0.3",
-      )
-      .fromTo(
-        ".loader-copy",
-        { opacity: 0 },
-        { opacity: 1, duration: 0.8 },
-        "-=0.55",
-      )
-      .fromTo(
-        ".loader-progress-wrap",
-        { opacity: 0 },
-        { opacity: 1, duration: 0.6 },
-        "-=0.5",
-      )
-      .to(
-        ".loader-line",
-        {
-          scaleX: 1,
-          duration: 3,
-          ease: "power1.inOut",
-        },
-        "-=0.4",
-      );
-
-    const drift = gsap.to(bgGlow.current, {
-      yPercent: -4,
-      xPercent: 2,
-      scale: 1.03,
-      duration: 4,
-      ease: "sine.inOut",
-      yoyo: true,
-      repeat: -1,
-    });
-
-    return () => {
-      tl.kill();
-      drift.kill();
     };
   }, [shouldShow]);
 
@@ -190,6 +144,7 @@ export function SiteLoader() {
     if (!root.current || exiting) return;
 
     setExiting(true);
+    localStorage.setItem("blackridge-loader-seen", "1");
 
     const tl = gsap.timeline({
       defaults: { ease: "power2.inOut" },
