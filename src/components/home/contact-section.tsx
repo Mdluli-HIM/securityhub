@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowUpRight, LockKeyhole, Mail, Phone } from "lucide-react";
 import { Reveal } from "@/components/motion/reveal";
+import { BrandWatermark } from "@/components/site/brand-watermark";
 
 export function ContactSection() {
   return (
@@ -11,7 +12,11 @@ export function ContactSection() {
       className="bg-[#f4f4f1] pb-16 pt-14 sm:pb-20 sm:pt-16 lg:pb-24 lg:pt-20"
     >
       <div className="container-shell">
-        <div className="border-t border-black/10 pt-8 sm:pt-10 lg:pt-12">
+        <div className="relative border-t border-black/10 pt-8 sm:pt-10 lg:pt-12">
+          <BrandWatermark
+            tone="blue"
+            className="right-[-10%] top-8 h-[420px] w-[420px] opacity-70"
+          />
           <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
             <Reveal>
               <div className="inline-flex items-center gap-2 border border-[#8b6a45]/18 bg-[#8b6a45]/6 px-3 py-1.5">

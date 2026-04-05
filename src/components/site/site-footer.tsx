@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { LockKeyhole } from "lucide-react";
 import { siteContent } from "@/content/site";
+import { BrandWatermark } from "@/components/site/brand-watermark";
+import { BrandLogo } from "@/components/site/brand-logo";
 
 const topGroups = [
   {
@@ -70,7 +72,12 @@ const smallTags = ["Buildings", "Access", "Monitoring", "Protection"];
 export function SiteFooter() {
   return (
     <footer className="mt-0">
-      <div className="border-t border-white/10 bg-[#0d1822] text-[#f3efe7]">
+      <div className="relative border-t border-white/10 bg-[#0d1822] text-[#f3efe7]">
+        <BrandWatermark
+          tone="blue"
+          className="right-[-8%] top-0 h-full w-[520px] opacity-70"
+        />
+
         <div className="container-shell pt-10 sm:pt-12 lg:pt-16">
           <div className="grid gap-10 border-b border-white/10 pb-10 sm:gap-12 sm:pb-12 lg:grid-cols-4 lg:pb-16">
             <div>
@@ -91,11 +98,15 @@ export function SiteFooter() {
                 </p>
               </div>
 
+              <div className="mt-8">
+                <BrandLogo variant="seal" />
+              </div>
+
               <div className="mt-6 flex flex-wrap gap-3 sm:mt-8">
                 {smallTags.map((tag) => (
                   <div
                     key={tag}
-                    className="inline-flex items-center gap-2 border border-white/10 bg-white/[0.03] px-3 py-2"
+                    className="shield-card-dark inline-flex items-center gap-2 px-3 py-2"
                   >
                     <LockKeyhole className="h-3.5 w-3.5 text-[#9db6cf]" />
                     <span className="text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-[#f3efe7]/72">

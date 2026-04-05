@@ -7,6 +7,8 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { ArrowUpRight } from "lucide-react";
 import { siteContent } from "@/content/site";
+import { BrandWatermark } from "@/components/site/brand-watermark";
+import { BrandLogo } from "@/components/site/brand-logo";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -92,9 +94,7 @@ export function SecurityHero() {
         window.addEventListener(
           "blackridge:loader-finished",
           onLoaderFinished,
-          {
-            once: true,
-          },
+          { once: true },
         );
 
         return () => {
@@ -128,9 +128,16 @@ export function SecurityHero() {
           </div>
         </div>
 
-        <div className="hero-panel relative overflow-hidden border border-black/12 bg-[#08090b] text-white">
+        <div className="hero-panel relative overflow-hidden border border-white/10 bg-[#2a1115] text-[#f3efe7]">
+          <BrandLogo
+            variant="watermark"
+            className="right-[-6%] top-[-8%] h-[130%] w-[55%]"
+          />
+
+          <BrandWatermark tone="light" className="inset-0 opacity-60" />
+
           <div className="hero-bg-shift absolute inset-0">
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,#0a0a0c_0%,#070709_100%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,#311318_0%,#260e12_100%)]" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_16%,rgba(255,255,255,0.035),transparent_0,transparent_26%),radial-gradient(circle_at_82%_12%,rgba(255,255,255,0.02),transparent_0,transparent_20%)]" />
           </div>
 

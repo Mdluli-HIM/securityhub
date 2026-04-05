@@ -15,7 +15,7 @@ export function TrustDetails() {
             <div className="inline-flex items-center gap-2 border border-[#8b6a45]/20 bg-[#8b6a45]/6 px-3 py-1.5">
               <LockKeyhole className="h-3.5 w-3.5 text-[#8b6a45]" />
               <span className="text-[0.64rem] font-semibold uppercase tracking-[0.22em] text-[#8b6a45]">
-                Why Blackridge
+                Why Dingiswayo
               </span>
             </div>
 
@@ -37,13 +37,15 @@ export function TrustDetails() {
 
               return (
                 <Reveal key={`${item.title}-${index}`}>
-                  <article className="ui-card p-4 sm:p-5 lg:p-6">
+                  <article className="shield-card p-4 sm:p-5 lg:p-6">
+                    <span className="shield-notch" />
+
                     <div className="flex items-center justify-between">
-                      <span className="text-[0.66rem] font-semibold uppercase tracking-[0.22em] text-black/34">
+                      <span className="shield-badge text-[0.66rem] font-semibold uppercase tracking-[0.18em] text-[#8b6a45]">
                         {displayIndex}
                       </span>
 
-                      <div className="flex h-8 w-8 items-center justify-center border border-[#8b6a45]/20 bg-[#8b6a45]/6">
+                      <div className="flex h-9 w-9 items-center justify-center border border-[#8b6a45]/18 bg-[#8b6a45]/6">
                         <Icon className="h-4 w-4 text-[#8b6a45]" />
                       </div>
                     </div>

@@ -81,13 +81,16 @@ export function CommandLayer() {
               {siteContent.capabilities.map((item) => (
                 <article
                   key={item.index}
-                  className="command-card ui-card-dark p-6 md:p-7"
+                  className="command-card shield-card-dark p-6 md:p-7"
                 >
+                  <span className="shield-notch-dark" />
+
                   <div className="flex items-start justify-between gap-4">
                     <p className="text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-white/38">
                       {item.eyebrow}
                     </p>
-                    <span className="font-display text-[1.4rem] tracking-[-0.05em] text-white/24">
+
+                    <span className="shield-badge-dark text-[0.66rem] font-semibold uppercase tracking-[0.18em] text-white/72">
                       {item.index}
                     </span>
                   </div>

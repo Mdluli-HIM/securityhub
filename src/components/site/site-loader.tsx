@@ -10,6 +10,7 @@ import {
 import { createPortal } from "react-dom";
 import gsap from "gsap";
 import { ArrowUpRight, LockKeyhole } from "lucide-react";
+import { BrandLogo } from "@/components/site/brand-logo";
 
 function useHydrated() {
   return useSyncExternalStore(
@@ -205,21 +206,12 @@ export function SiteLoader() {
             </span>
           </div>
 
-          <div className="mt-8">
-            <div className="overflow-hidden">
-              <p className="loader-title-line font-display text-[clamp(3rem,12vw,7rem)] leading-[0.88] tracking-[-0.09em] text-white">
-                BLACKRIDGE
-              </p>
-            </div>
-            <div className="overflow-hidden">
-              <p className="loader-title-line font-display text-[clamp(3rem,12vw,7rem)] leading-[0.88] tracking-[-0.09em] text-white/68">
-                SECURITY
-              </p>
-            </div>
+          <div className="mt-8 flex justify-center">
+            <BrandLogo variant="loader" priority />
           </div>
 
           <p className="loader-copy mt-5 max-w-[28rem] text-[0.9rem] leading-6 text-white/44 sm:text-[0.96rem] sm:leading-7">
-            Structured protection. Controlled access. Operational readiness.
+            Building protection. Controlled access. Operational readiness.
           </p>
 
           <div className="loader-progress-wrap mt-10 w-full max-w-[500px]">

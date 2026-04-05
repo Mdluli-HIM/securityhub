@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { Menu, X, ArrowUpRight, Plus, Minus } from "lucide-react";
 import { siteContent } from "@/content/site";
-
+import { BrandLogo } from "@/components/site/brand-logo";
 export function SiteHeader() {
   const [activeLabel, setActiveLabel] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -59,14 +59,12 @@ export function SiteHeader() {
       <header className="sticky top-0 z-50 border-b border-black/10 bg-[rgba(244,244,241,0.84)] backdrop-blur-xl">
         <div onMouseLeave={() => setActiveLabel(null)}>
           <div className="container-shell grid h-20 grid-cols-[auto_1fr_auto] items-center gap-8">
-            <Link href="/" className="flex items-center gap-3">
-              <span className="flex h-7 w-7 items-center justify-center border border-black/20 bg-black transition duration-200 hover:rotate-45">
-                <span className="h-2 w-2 bg-white" />
-              </span>
-
-              <span className="font-display text-[1.85rem] tracking-[-0.07em] text-black">
-                {siteContent.companyName}
-              </span>
+            <Link
+              href="/"
+              className="flex items-center"
+              onClick={closeMobileMenu}
+            >
+              <BrandLogo variant="header" priority />
             </Link>
 
             {/* DESKTOP NAV */}
